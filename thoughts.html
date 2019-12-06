@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>0秒思考</title>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <h1>ゼロ秒思考シート</h1>
+  <div class="top">
+    <div class="top_area">
+      <div id="timer" class="timer">01:00.000</div>
+      <div class="controller">
+      <div id="play" class="btn"><i class="fas fa-play"></i></div>
+      <div id="pause" class="btn"><i class="fas fa-pause"></i></div>
+      <div id="clear" class="btn"><i class="fas fa-redo-alt"></i></div>
+      </div>
+    </div>
+    <div class="input_area">
+      <input type = "date" id="date" placeholder="日付" class="date"></div>
+      <div class="storage_controller">
+        <div id="save"  class="btn"><i class="far fa-save"></i></div>
+        <div id="delete"  class="btn"><i class="far fa-trash-alt"></i></div>
+        <div id="reload" class="btn"><i class="fas fa-sync-alt"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------- -->
+  
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt1" type="text" placeholder="ゼロ秒思考1">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm1" class="thoughts inner" rows="7" cols="60" placeholder=" 1分で思いついたことをすべて書き出してください。"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt2" type="text" placeholder="ゼロ秒思考2">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm2" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt3" type="text" placeholder="ゼロ秒思考3">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm3" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt4" type="text" placeholder="ゼロ秒思考4">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm4" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt5" type="text" placeholder="ゼロ秒思考5">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm5" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt6" type="text" placeholder="ゼロ秒思考6">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm6" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt7" type="text" placeholder="ゼロ秒思考7">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm7" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt8" type="text" placeholder="ゼロ秒思考8">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm8" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt9" type="text" placeholder="ゼロ秒思考9">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm9" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+  <ul class="menu">
+    <li class="menu__item">
+      <a class="menu__item__link js-menu__item__link" href="">
+        <input id = "zt10" type="text" placeholder="ゼロ秒思考10">
+      </a>
+      <ul class="submenu">
+        <li class="submenu__item">
+            <textarea id="zm10" class="thoughts inner" rows="7" cols="60"></textarea>
+        </li>
+      </li>
+    </ul>
+    </li>
+  </ul>
+
+  <!-- ------------------------------------------- -->
+
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(function(){
+      const pause = document.getElementById('pause');
+      const clear = document.getElementById('clear');
+      const timer = document.getElementById('timer');
+      let startTime;
+      let timeoutId;
+      let elapsedTime = 0;
+      let isPlaying = false;
+
+
+// -------------------------------------------------------------------------
+
+// アコーディオン 
+
+// -------------------------------------------------------------------------
+
+
+       $('.js-menu__item__link').each(function () {
+        $(this).on('click', function () {
+          $("+.submenu", this).slideToggle();
+          return false;
+        });
+      });
+
+  
+
+// -------------------------------------------------------------------------
+
+// ローカルストレージ
+
+// -------------------------------------------------------------------------
+// 39
+      $('#save').on('click', function () {
+        let array = [0];
+        // reloadのdata[i - 1]をdata[i]にするために適当に空配列にものを入れている
+        for(let i = 1; i < 11; i++){
+        let obj = {
+          date: $('#date').val(),
+          title: $(`#zt${i}`).val(),
+          memo: $(`#zm${i}`).val(),
+        };
+        array.push(obj);
+      }
+        console.log(array);
+        const jsonData = JSON.stringify(array);
+        localStorage.setItem('memo', jsonData);
+        alert('思考を保存しました')
+      });
+
+      $('#delete').on('click', function(){
+        let deleteOr = confirm('思考を削除しますか？');
+        if (deleteOr) {
+        localStorage.removeItem('memo');
+        $('#date').val("");
+        for(let i = 0; i < 10; i++){
+          $(`#zt${i}`).val("");
+          $(`#zm${i}`).val("");
+        }
+      }
+      });
+
+      $('#reload').on('click', function(){
+        if(localStorage.getItem('memo')){
+          const jasonData = localStorage.getItem('memo');
+          const data = JSON.parse(jasonData);
+          for(let i = 1; i < 11; i++){
+            $('#date').val(data[i].date);
+            $(`#zt${i}`).val(data[i].title);
+            $(`#zm${i}`).val(data[i].memo);
+          }          
+        }
+      });
+
+// -------------------------------------------------------------------------
+
+// タイマー操作
+
+// -------------------------------------------------------------------------
+
+
+        function updateTimer() {
+        const timeLimit = 60 * 1000;
+
+        const t = new Date(startTime + timeLimit - Date.now() - elapsedTime);
+        const m = String(t.getMinutes()).padStart(2, '0');
+        const s = String(t.getSeconds()).padStart(2, '0');
+        const ms = String(t.getMilliseconds()).padStart(3, '0');
+        timer.textContent = `${m}:${s}.${ms}`;
+
+        timeoutId = setTimeout(() => {
+          updateTimer();
+        }, 10);
+
+        // if(t < 10){
+        //   $('#timer').addClass('red');
+        // }
+
+        if(t < 0){
+          isPlaying = false;
+          clearTimeout(timeoutId);
+          timer.textContent = "00:00.000";
+          $('#timer').css('color','red');
+        }
+
+        }
+
+        $('#play').on('click', function(){
+          if(isPlaying == true){
+            return;
+          }
+          isPlaying = true;
+          startTime = Date.now();
+          updateTimer();
+        });
+
+        $('#pause').on('click', function(){
+          if(!isPlaying){
+            return;
+          }
+          
+          isPlaying = false;
+          clearTimeout(timeoutId);
+          elapsedTime += Date.now() - startTime;
+        });
+
+        $('#clear').on('click', function(){
+          if(isPlaying == true){
+            return;
+          }
+          isPlaying = false;
+          clearTimeout(timeoutId);
+          elapsedTime = 0;
+          timer.textContent = "01:00.000";
+        });
+        
+        
+       
+
+
+     
+    });
+  
+  </script>
+</body>
+
+</html>

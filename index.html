@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>toppage</title>
+  <link rel="stylesheet" href="css/top.css">
+</head>
+<body>
+<div class="container">
+  <div class="box">
+    <h1>Are you ready?</h1>
+    <p class="btn"><a href="thoughts.html">Click here</a></p>
+  </div>
+</div>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path id="myID" d="" /></svg>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="js/wavify.js"></script>
+  <script src="js/jquery.wavify.js"></script>
+  <script>
+    $(function(){
+     var myWave = $('#myID').wavify({
+        height: 60,
+        bones: 4,
+        amplitude: 40,
+        // color: 'rgba(150, 97, 255, .8)',
+        color: '#00a7ea',
+        speed: .2
+      });
+
+
+    })
+    
+  </script>
+</body>
+</html>
